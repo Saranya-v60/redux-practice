@@ -5,8 +5,12 @@ import {DecCounterAction} from './DecCounterAction';
 const DecrementCounter = (props) => {
     return(
    <div>
+       <div>
        Decrement Count : {props.count}
+       </div>
+       <div>
        <button onClick = {props.decCountValue}>Decrement</button>
+       </div>
    </div>
     )
 }
