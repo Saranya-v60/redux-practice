@@ -1,0 +1,1 @@
+export const DEC_COUNTER = "DEC_COUNTER";
