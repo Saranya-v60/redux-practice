@@ -7,16 +7,18 @@ import Counter from './redux-components/IncCounter/CounterUI';
 import DecrementCounter from './redux-components/DecCounter/DecUI';
 import HooksIncCounter from './redux-components/IncCounter/HooksIncCounter';
 import OwnPropsState from './redux-components/IncCounter/OwnStateProps';
+import UserContainer from './redux-components/User/UserContainer';
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Counter />
+        {/* <Counter />
         <DecrementCounter/>
         <OwnPropsState hasOwnProps/>
-        <OwnPropsState/>
+        <OwnPropsState/> */}
         {/* <HooksIncCounter/> */}
+        <UserContainer/>
       </div>
     </Provider>
   );
