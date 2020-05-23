@@ -5,22 +5,26 @@ import * as userActions from './UserActions';
 
 const UserContainer = ({ userData, fetchUsers }) => {
     useEffect(() => {
-        fetchUsers();
-    }, []);
-    return (
+        fetchUsers()
+      }, [])
+      return userData.loading ? (
+        <h2>Loading</h2>
+      ) : userData.error ? (
+        <h2>{userData.error}</h2>
+      ) : (
         <div>
-            <div>
-                users List
+          <h2>Users List</h2>
+          <div>
+            {userData &&
+              userData.users &&
+              userData.users.map(user => <p>{user.name}</p>)}
+          </div>
         </div>
-            <div>
-                {userData.map((user) => <p> {user.name} </p>)}
-            </div>
-        </div>
-    )
-}
+      )
+    }
 const mapStateToProps = state => {
     return {
-        userData: state.usr.users
+        userData: state.usr
     }
 }
 const mapDispatchToProps = dispatch => {
